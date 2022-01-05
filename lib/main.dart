@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
-import 'package:rest_api_test/bindings/initial_binding.dart';
 import 'package:rest_api_test/router/app_pages.dart';
 import 'package:rest_api_test/router/app_routes.dart';
-import 'package:rest_api_test/views/home/screens/home_screen.dart';
 
 void main() async  {
 
@@ -20,7 +18,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'Recipe App',
-      initialBinding: InitBinding(),
       getPages: AppRouter.routes,
       initialRoute:Routes.HOME_SCREEN,
 
@@ -28,7 +25,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: const HomeScreen(),
+      // home:  HomeScreen(),
     );
   }
 }

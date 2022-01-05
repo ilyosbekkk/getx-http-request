@@ -6,9 +6,11 @@ class HomeScreenBinding extends Bindings{
 
   @override
   void dependencies() {
-
-      Get.put(CategoriesRepository(categoriesApi: CategoriesApi()));
+      Get.put(CategoriesApi());
+      Get.put(CategoriesRepository(categoriesApi: Get.find<CategoriesApi>()));
       Get.put(HomeScreenController());
+      Get.lazyPut(() => RecipesApi());
+      Get.lazyPut(() => RecipesRepository(recipesApi: Get.find<RecipesApi>()) );
 
   }
 
