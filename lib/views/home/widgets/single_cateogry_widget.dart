@@ -3,7 +3,7 @@ import 'package:rest_api_test/controllers/detail_screen_controller.dart';
 import 'package:rest_api_test/models/category.dart';
 import 'package:get/get.dart';
 import 'package:rest_api_test/router/app_pages.dart';
-import 'package:rest_api_test/src/const.dart';
+import 'package:rest_api_test/core/src/const.dart';
 import 'package:rest_api_test/views/details/screens/details_screen.dart';
 
 

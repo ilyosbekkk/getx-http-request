@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
+import 'package:rest_api_test/bindings/initial_binding.dart';
 import 'package:rest_api_test/router/app_pages.dart';
 import 'package:rest_api_test/router/app_routes.dart';
 
@@ -20,7 +22,8 @@ class MyApp extends StatelessWidget {
       title: 'Recipe App',
       getPages: AppRouter.routes,
       initialRoute:Routes.HOME_SCREEN,
-
+      initialBinding: InitialBinding(),
+      builder: EasyLoading.init(),
       theme: ThemeData(
 
         primarySwatch: Colors.blue,

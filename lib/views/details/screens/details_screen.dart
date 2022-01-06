@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:rest_api_test/controllers/detail_screen_controller.dart';
 import 'package:rest_api_test/models/category.dart';
-import 'package:rest_api_test/src/const.dart';
+import 'package:rest_api_test/core/src/const.dart';
+import 'package:rest_api_test/views/details/widgets/single_recipe.dart';
 class DetailScreen extends StatelessWidget {
 
   final controller = Get.find<DetailScreenController>(
@@ -17,8 +18,14 @@ class DetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(child: Text("hello world"),),
+    return  Scaffold(
+      body:Obx(() {
+        return  ListView.builder(
+            itemCount: controller.recipes.length,
+            itemBuilder: (context, index){
+              return SingleRecipeWidget(recipe: controller.recipes[index]);
+            });
+      }),
     );
   }
 }
